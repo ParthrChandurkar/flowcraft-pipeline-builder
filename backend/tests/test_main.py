@@ -18,6 +18,13 @@ def test_is_dag_returns_false_for_cycle():
     assert is_dag(nodes, edges) is False
 
 
+def test_is_dag_returns_false_for_missing_edge_endpoint():
+    nodes = [Node(id="input-1")]
+    edges = [Edge(source="input-1", target="missing-output")]
+
+    assert is_dag(nodes, edges) is False
+
+
 def test_parse_pipeline_returns_graph_summary():
     result = parse_pipeline(
         Pipeline(

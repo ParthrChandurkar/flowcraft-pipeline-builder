@@ -25,13 +25,12 @@ class Pipeline(BaseModel):
     edges: List[Edge]
 
 def is_dag(nodes: List[Node], edges: List[Edge]) -> bool:
-    # Build adjacency list
     graph = {node.id: [] for node in nodes}
     for edge in edges:
-        if edge.source in graph:
-            graph[edge.source].append(edge.target)
+        if edge.source not in graph or edge.target not in graph:
+            return False
+        graph[edge.source].append(edge.target)
 
-    # DFS-based cycle detection
     WHITE, GRAY, BLACK = 0, 1, 2
     color = {node.id: WHITE for node in nodes}
 
@@ -39,7 +38,7 @@ def is_dag(nodes: List[Node], edges: List[Edge]) -> bool:
         color[node_id] = GRAY
         for neighbor in graph.get(node_id, []):
             if color.get(neighbor) == GRAY:
-                return False  # cycle found
+                return False
             if color.get(neighbor) == WHITE:
                 if not dfs(neighbor):
                     return False
