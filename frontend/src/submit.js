@@ -15,10 +15,13 @@ export const SubmitButton = ({ onResult }) => {
           edges: edges.map(e => ({ source: e.source, target: e.target })),
         }),
       });
+      if (!res.ok) {
+        throw new Error(`Pipeline analysis failed with status ${res.status}`);
+      }
       const data = await res.json();
       onResult(data);
     } catch (err) {
-      alert(`Backend not reachable at ${API_BASE_URL}. Make sure the API server is running.`);
+      alert(`${err.message}. Make sure the API server is running at ${API_BASE_URL}.`);
     }
   };
 
