@@ -1,4 +1,5 @@
 import { useStore } from './store';
+import { API_BASE_URL } from './config';
 
 export const SubmitButton = ({ onResult }) => {
   const nodes = useStore(s => s.nodes);
@@ -6,7 +7,7 @@ export const SubmitButton = ({ onResult }) => {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch('http://localhost:8000/pipelines/parse', {
+      const res = await fetch(`${API_BASE_URL}/pipelines/parse`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -17,7 +18,7 @@ export const SubmitButton = ({ onResult }) => {
       const data = await res.json();
       onResult(data);
     } catch (err) {
-      alert('Backend not reachable. Make sure uvicorn is running on port 8000.');
+      alert(`Backend not reachable at ${API_BASE_URL}. Make sure the API server is running.`);
     }
   };
 
