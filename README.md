@@ -68,6 +68,28 @@ npm start
 
 The app runs at `http://localhost:3000` and expects the backend to be available on port `8000`.
 
+To point the frontend at a different backend URL, set:
+
+```bash
+REACT_APP_API_BASE_URL=http://localhost:8000
+```
+
+## Usage
+
+1. Start the FastAPI backend.
+2. Start the React frontend.
+3. Drag nodes from the toolbar onto the canvas.
+4. Connect handles between nodes to create a pipeline.
+5. Click `Run Pipeline` to view node count, edge count, and DAG status.
+
+## Testing
+
+Run the backend tests from the repository root:
+
+```bash
+python -m pytest backend/tests
+```
+
 ## API
 
 ### `POST /pipelines/parse`
