@@ -21,7 +21,7 @@ FlowCraft is a visual pipeline builder for composing node-based workflows on a d
 - ⚡ **FastAPI** — high-performance Python API
 - 🛡️ **Pydantic** — request validation and data modeling
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 .
@@ -40,7 +40,7 @@ FlowCraft is a visual pipeline builder for composing node-based workflows on a d
     `-- package.json
 ```
 
-## Getting Started
+## 🏁 Getting Started
 
 ### Backend
 
@@ -76,7 +76,7 @@ To point the frontend at a different backend URL, set:
 REACT_APP_API_BASE_URL=http://localhost:8000
 ```
 
-## Usage
+## 💡 Usage
 
 1. Start the FastAPI backend.
 2. Start the React frontend.
@@ -84,7 +84,7 @@ REACT_APP_API_BASE_URL=http://localhost:8000
 4. Connect handles between nodes to create a pipeline.
 5. Click `Run Pipeline` to view node count, edge count, and DAG status.
 
-## Testing
+## 🧪 Testing
 
 Run the backend tests from the repository root:
 
@@ -92,7 +92,7 @@ Run the backend tests from the repository root:
 python -m pytest backend/tests
 ```
 
-## API
+## 🔌 API
 
 ### `POST /pipelines/parse`
 
@@ -115,7 +115,7 @@ Returns graph analysis:
 }
 ```
 
-## Notes
+## 📝 Notes
 
 - The backend currently validates graph shape and detects cycles; it does not execute node logic.
 - The frontend sends only node IDs and edge endpoints to the backend parser.
