@@ -13,13 +13,13 @@ FlowCraft is a visual pipeline builder for composing node-based workflows on a d
 - ▶️ One-click pipeline submission to a backend parser
 - ✅ Backend response with node count, edge count, and DAG validation
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- React 18
-- React Flow
-- Zustand
-- FastAPI
-- Pydantic
+- ⚛️ **React 18** — component-based user interface
+- 🧭 **React Flow** — interactive node canvas
+- 🐻 **Zustand** — lightweight state management
+- ⚡ **FastAPI** — high-performance Python API
+- 🛡️ **Pydantic** — request validation and data modeling
 
 ## Project Structure
 
