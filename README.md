@@ -126,6 +126,13 @@ Run the backend tests from the repository root:
 python -m pytest backend/tests
 ```
 
+Create a production frontend build to catch compilation errors:
+
+```bash
+cd frontend
+npm run build
+```
+
 ## API
 
 ### `GET /`
@@ -167,3 +174,15 @@ curl -X POST http://localhost:8000/pipelines/parse \
 
 - The backend currently validates graph shape and detects cycles; it does not execute node logic.
 - The frontend sends only node IDs and edge endpoints to the backend parser.
+
+## Contributing
+
+Contributions are welcome. To propose a change:
+
+1. Fork the repository and create a focused branch.
+2. Make the change and include tests when behavior is affected.
+3. Run the backend test suite and frontend production build.
+4. Commit with a clear, descriptive message.
+5. Open a pull request explaining what changed and why.
+
+Keep pull requests small and avoid committing generated files, local environment files, or dependency directories.
