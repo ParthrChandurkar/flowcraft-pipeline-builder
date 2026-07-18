@@ -42,6 +42,21 @@ FlowCraft is a visual pipeline builder for composing node-based workflows on a d
 
 ## Getting Started
 
+### Prerequisites
+
+Install the following before running the project:
+
+- Python 3.9 or newer
+- Node.js 18 or newer with npm
+- Git
+
+Clone the repository and move into the project directory:
+
+```bash
+git clone <repository-url>
+cd vectorshift_assessment
+```
+
 ### Backend
 
 ```bash
@@ -59,6 +74,7 @@ On Windows PowerShell, activate the environment with:
 ```
 
 The API runs at `http://localhost:8000`.
+Interactive API documentation is available at `http://localhost:8000/docs`.
 
 ### Frontend
 
@@ -75,6 +91,8 @@ To point the frontend at a different backend URL, set:
 ```bash
 REACT_APP_API_BASE_URL=http://localhost:8000
 ```
+
+Create `frontend/.env` with this variable before running `npm start` when using a custom backend URL.
 
 ## Usage
 
