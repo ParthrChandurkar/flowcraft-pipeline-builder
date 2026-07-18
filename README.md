@@ -102,6 +102,22 @@ Create `frontend/.env` with this variable before running `npm start` when using 
 4. Connect handles between nodes to create a pipeline.
 5. Click `Run Pipeline` to view node count, edge count, and DAG status.
 
+### Available Nodes
+
+| Node | Purpose |
+| --- | --- |
+| Input | Defines a named text or file input for the pipeline. |
+| Output | Represents the pipeline's text or image result. |
+| LLM | Accepts system and prompt inputs and produces a response. |
+| Text | Builds text and creates input handles for `{{variable}}` placeholders. |
+| Note | Adds an editable annotation to the canvas. |
+| Math | Selects an arithmetic operation for two inputs. |
+| API Call | Configures an HTTP method and endpoint. |
+| Filter | Splits data into pass and fail paths using a condition. |
+| Timer | Adds a configurable delay after a trigger. |
+
+Node controls describe the intended workflow configuration. Submitting a pipeline analyzes its graph structure; it does not execute the configured operations.
+
 ## Testing
 
 Run the backend tests from the repository root:
