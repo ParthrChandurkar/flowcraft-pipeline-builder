@@ -128,13 +128,17 @@ python -m pytest backend/tests
 
 ## API
 
+### `GET /`
+
+Returns `{"Ping":"Pong"}` and can be used as a basic backend health check.
+
 ### `POST /pipelines/parse`
 
-Accepts a pipeline graph:
+Accepts a pipeline graph containing node IDs and directed edge endpoints:
 
 ```json
 {
-  "nodes": [{ "id": "input-1" }],
+  "nodes": [{ "id": "input-1" }, { "id": "text-1" }],
   "edges": [{ "source": "input-1", "target": "text-1" }]
 }
 ```
@@ -148,6 +152,16 @@ Returns graph analysis:
   "is_dag": true
 }
 ```
+
+Example request:
+
+```bash
+curl -X POST http://localhost:8000/pipelines/parse \
+  -H "Content-Type: application/json" \
+  -d '{"nodes":[{"id":"input-1"},{"id":"text-1"}],"edges":[{"source":"input-1","target":"text-1"}]}'
+```
+
+`is_dag` is `false` when the graph contains a cycle or when an edge refers to a node that is not included in `nodes`. Malformed request bodies are rejected by FastAPI with a `422` response.
 
 ## Notes
 
