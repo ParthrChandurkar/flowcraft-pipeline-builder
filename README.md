@@ -53,8 +53,8 @@ Install the following before running the project:
 Clone the repository and move into the project directory:
 
 ```bash
-git clone <repository-url>
-cd vectorshift_assessment
+git clone https://github.com/ParthrChandurkar/flowcraft-pipeline-builder.git
+cd flowcraft-pipeline-builder
 ```
 
 ### Backend
