@@ -50,6 +50,26 @@ Install the following before running the project:
 - Node.js 18 or newer with npm
 - Git
 
+### Quick Start
+
+Run the backend and frontend in separate terminals after cloning the repository:
+
+```bash
+# Terminal 1
+cd backend
+python -m pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+```bash
+# Terminal 2
+cd frontend
+npm install
+npm start
+```
+
+Then open `http://localhost:3000` in your browser.
+
 Clone the repository and move into the project directory:
 
 ```bash
