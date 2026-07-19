@@ -197,6 +197,13 @@ curl -X POST http://localhost:8000/pipelines/parse \
 
 `is_dag` is `false` when the graph contains a cycle or when an edge refers to a node that is not included in `nodes`. Malformed request bodies are rejected by FastAPI with a `422` response.
 
+## Troubleshooting
+
+- If the frontend cannot submit a pipeline, confirm the FastAPI server is running at `http://localhost:8000` and check `REACT_APP_API_BASE_URL`.
+- If port `3000` or `8000` is already in use, stop the conflicting process or start the affected service on another port.
+- If PowerShell blocks virtual-environment activation, run `Set-ExecutionPolicy -Scope Process Bypass` and activate the environment again.
+- If frontend dependencies behave unexpectedly, remove `frontend/node_modules`, run `npm install`, and restart the development server.
+
 ## Notes
 
 - The backend currently validates graph shape and detects cycles; it does not execute node logic.
