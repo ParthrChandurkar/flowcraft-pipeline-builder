@@ -50,6 +50,13 @@ Install the following before running the project:
 - Node.js 18 or newer with npm
 - Git
 
+Clone the repository and move into the project directory:
+
+```bash
+git clone https://github.com/ParthrChandurkar/flowcraft-pipeline-builder.git
+cd flowcraft-pipeline-builder
+```
+
 ### Quick Start
 
 Run the backend and frontend in separate terminals after cloning the repository:
@@ -69,13 +76,6 @@ npm start
 ```
 
 Then open `http://localhost:3000` in your browser.
-
-Clone the repository and move into the project directory:
-
-```bash
-git clone https://github.com/ParthrChandurkar/flowcraft-pipeline-builder.git
-cd flowcraft-pipeline-builder
-```
 
 ### Backend
 
