@@ -106,13 +106,20 @@ npm start
 
 The app runs at `http://localhost:3000` and expects the backend to be available on port `8000`.
 
-To point the frontend at a different backend URL, set:
+To point the frontend at a different backend URL, create `frontend/.env`:
 
-```bash
+```dotenv
 REACT_APP_API_BASE_URL=http://localhost:8000
 ```
 
-Create `frontend/.env` with this variable before running `npm start` when using a custom backend URL.
+Alternatively, set the variable for the current PowerShell session:
+
+```powershell
+$env:REACT_APP_API_BASE_URL = "http://localhost:8000"
+npm start
+```
+
+Restart the development server after changing the backend URL so Create React App can load the new value.
 
 ## Usage
 
