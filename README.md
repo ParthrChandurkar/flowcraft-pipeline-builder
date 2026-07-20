@@ -4,6 +4,18 @@
 
 FlowCraft is a visual pipeline builder for composing node-based workflows on a drag-and-drop canvas. It combines a responsive React Flow frontend with a FastAPI backend that analyzes submitted graphs in real time.
 
+## Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Testing](#testing)
+- [API](#api)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+
 ## Features
 
 - Drag-and-drop canvas for building connected workflow nodes
