@@ -182,6 +182,13 @@ npm run build
 
 ## API
 
+| Method | Endpoint | Success | Description |
+| --- | --- | --- | --- |
+| `GET` | `/` | `200 OK` | Confirms that the backend is available. |
+| `POST` | `/pipelines/parse` | `200 OK` | Returns node and edge counts plus DAG validation. |
+
+FastAPI returns `422 Unprocessable Entity` when a request body does not match the expected pipeline schema.
+
 ### `GET /`
 
 Returns `{"Ping":"Pong"}` and can be used as a basic backend health check.
