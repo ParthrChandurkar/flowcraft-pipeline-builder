@@ -173,6 +173,13 @@ Run the backend tests from the repository root:
 python -m pytest backend/tests
 ```
 
+Run the frontend test suite once in non-interactive mode:
+
+```bash
+cd frontend
+npm test -- --watchAll=false
+```
+
 Create a production frontend build to catch compilation errors:
 
 ```bash
