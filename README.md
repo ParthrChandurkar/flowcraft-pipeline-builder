@@ -9,6 +9,7 @@ FlowCraft is a visual pipeline builder for composing node-based workflows on a d
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
+- [How It Works](#how-it-works)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Testing](#testing)
@@ -51,6 +52,13 @@ FlowCraft is a visual pipeline builder for composing node-based workflows on a d
     |   `-- submit.js
     `-- package.json
 ```
+
+## How It Works
+
+1. The React frontend lets users add nodes and connect them on a React Flow canvas.
+2. Zustand stores the current nodes, edges, and canvas interactions in the browser.
+3. Clicking `Run Pipeline` sends node IDs and edge endpoints to `POST /pipelines/parse`.
+4. The FastAPI backend counts the graph elements, validates edge references, detects cycles, and returns whether the graph is a DAG.
 
 ## Getting Started
 
